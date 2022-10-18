@@ -1,20 +1,17 @@
 ---
 galaxy_info:
-  author: Larry Smith Jr.
-  description: An [Ansible](https://www.ansible.com) role to install/configure [pacemaker/corosync](http://clusterlabs.org).
+  role_name: pacemaker
+  author: Benjamin Arntzen
+  description: An [Ansible](https://www.ansible.com) role to install/configure [pacemaker/corosync](http://clusterlabs.org). Based extremely heavily on Larry Smith Jr.'s role.
 
   license: MIT
 
   min_ansible_version: 2.0
 
   platforms:
-  - name: Ubuntu
-    versions:
-      - trusty
-      - xenial
   - name: Debian
     versions:
-      - stretch
+      - bullseye
 
   categories:
     - clustering

@@ -18,6 +18,8 @@
 
 # ansible-pacemaker
 
+Based heavily on https://github.com/mrlesmithjr/ansible-pacemaker but with changes for modern Debian.
+
 An [Ansible](https://www.ansible.com) role to install/configure [pacemaker/corosync](http://clusterlabs.org).
 
 ## Requirements
