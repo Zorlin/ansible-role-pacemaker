@@ -73,6 +73,7 @@
            {% if item['source_resource_id'] is defined %}
            {{ item['source_resource_id'] }}
            {% endif %}
+           with Started
            {% if item['target_resource_id'] is defined %}
            {{ item['target_resource_id'] }}
            {% endif %}
