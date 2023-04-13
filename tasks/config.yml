@@ -2,6 +2,7 @@
 - name: config | Setting Facts
   set_fact:
     corosync_bindnet_addr: "{{ hostvars[inventory_hostname]['ansible_' + corosync_bindnet_interface]['ipv4']['address'] }}"
+  check_mode: false
 
 - name: config | Setting hacluster password
   user:
