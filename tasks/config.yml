@@ -7,7 +7,7 @@
 - name: config | Setting hacluster password
   user:
     name: "hacluster"
-    password: "{{ pacemaker_hacluster_password | password_hash('sha512') }}"
+    password: "{{ pacemaker_hacluster_password | string | password_hash('sha512') }}"
   become: true
 
 - name: config | Capturing Corosync Auth Key
