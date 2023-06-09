@@ -6,7 +6,7 @@
   changed_when: false
 
 - name: cluster | Capturing Cluster Resources
-  command: "pcs resource show --full"
+  command: "pcs resource config"
   become: true
   register: "_pcs_resource_show"
   changed_when: false
