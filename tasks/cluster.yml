@@ -5,8 +5,28 @@
   register: "_pcs_property_show"
   changed_when: false
 
-- name: cluster | Capturing Cluster Resources
+- name: Check pcs version
+  shell: pcs --version | awk -F. '{print $2}'
+  register: pcs_minor_version
+  become: true
+  changed_when: false
+
+- name: cluster | Capturing Cluster Resources (old command)
   command: "pcs resource show --full"
+  become: true
+  register: "_pcs_resource_show"
+  when: pcs_minor_version.stdout|int < 11
+  changed_when: false
+
+- name: cluster | Capturing Cluster Resources (new command)
+  command: "pcs resource config"
+  become: true
+  register: "_pcs_resource_config"
+  when: pcs_minor_version.stdout|int >= 11
+  changed_when: false
+
+- name: cluster | Capturing Cluster Resources
+  command: "pcs resource config"
   become: true
   register: "_pcs_resource_show"
   changed_when: false
